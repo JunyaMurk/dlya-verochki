@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const music = document.getElementById("background-music");
     const playButton = document.getElementById("play-music");
     
-    // Контейнер для лепестков
+    
     const heartsContainer = document.createElement("div");
     heartsContainer.classList.add("hearts-container");
     document.body.appendChild(heartsContainer);
@@ -10,25 +10,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Начальная громкость (30%)
     music.volume = 0.3;
 
-    // Включаем музыку по нажатию
+    
     playButton.addEventListener("click", function () {
         music.play();
-        playButton.style.display = "none"; // Скрываем кнопку после нажатия
-        startHeartAnimation(); // Запускаем анимацию сердечек
+        playButton.style.display = "none"; 
+        startHeartAnimation(); 
     });
 
-    // Функция для анимации сердечек
+    
     function startHeartAnimation() {
         setInterval(() => {
             const heart = document.createElement("div");
             heart.classList.add("heart");
-            heart.innerHTML = "💖"; // Символ сердечка
+            heart.innerHTML = "💖"; 
             heart.style.left = Math.random() * 100 + "vw";
             heart.style.animationDuration = Math.random() * 3 + 3 + "s";
 
             document.body.appendChild(heart);
 
-            // Удаляем сердечки через 5 секунд
+            
             setTimeout(() => {
                 heart.remove();
             }, 5000);
@@ -37,20 +37,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     
-        // Включаем музыку по нажатию
+        
         playButton.addEventListener("click", function () {
             music.play();
-            playButton.style.display = "none"; // Скрываем кнопку после нажатия
-            startHeartAnimation(); // Запускаем анимацию сердечек
-            startPetalAnimation(); // Запускаем лепестки
+            playButton.style.display = "none"; 
+            startHeartAnimation(); 
+            startPetalAnimation(); 
         });
     
-        // Функция для анимации сердечек
+       
         function startHeartAnimation() {
             setInterval(() => {
                 const heart = document.createElement("div");
                 heart.classList.add("heart");
-                heart.innerHTML = "💖"; // Символ сердечка
+                heart.innerHTML = "💖"; 
                 heart.style.left = Math.random() * 100 + "vw";
                 heart.style.animationDuration = Math.random() * 3 + 3 + "s";
     
@@ -62,20 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 500);
         }
     
-        // Функция для запуска анимации лепестков
+        
         function startPetalAnimation() {
             setInterval(() => {
                 const petal = document.createElement("div");
                 petal.classList.add("petal");
-                petal.style.left = Math.random() * 100 + "vw"; // Случайное положение по ширине
-                petal.style.animationDuration = Math.random() * 5 + 3 + "s"; // Разная скорость падения
+                petal.style.left = Math.random() * 100 + "vw"; 
+                petal.style.animationDuration = Math.random() * 5 + 3 + "s"; 
                 
                 document.body.appendChild(petal);
     
                 setTimeout(() => {
                     petal.remove();
-                }, 7000); // Удаление лепестков через 7 секунд
-            }, 400); // Создание нового лепестка каждые 400 мс
+                }, 7000); 
+            }, 400); 
         }
     });
 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     
         function showLoveMessage() {
-            // Если надпись уже есть — не создаём новую
+            
             if (document.getElementById("love-message")) return;
     
             const message = document.createElement("div");
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             document.body.appendChild(message);
     
-            // Удаляем надпись через 4 секунды
+            
             setTimeout(() => {
                 message.remove();
             }, 4000);
